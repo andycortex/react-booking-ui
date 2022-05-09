@@ -4,7 +4,7 @@
     margin-top: 20px;
 }
 .listWrapper {
-    width: 100px;
+    width: 100%;
     max-width: 1024px;
     display: flex;
     gap: 20px;
@@ -56,7 +56,7 @@
     font-size: 12px;
 }
 .lsOptionsInput {
-    width: 80px;
+    width: 50px;
     border: none;
 }
 .listSearch>button {

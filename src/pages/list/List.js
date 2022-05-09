@@ -5,12 +5,14 @@ import Navbar from '../../components/navbar/Navbar'
 import { useLocation } from 'react-router-dom'
 import { DateRange } from 'react-date-range'
 import { format } from 'date-fns'
+import SearchItem from '../../components/searchItem/SearchItem'
 
 const List = () => {
     const location = useLocation();
-    const [destination] = useState(location.state.destination);
+    const [destination] = useState(location.state.destination)
     const [date, setDate] = useState(location.state.date)
-    const [openDate, setOpenDate] = useState(false);
+    const [openDate, setOpenDate] = useState(false)
+    const [options] = useState(location.state.options)
 
   return (
     <>
@@ -34,7 +36,7 @@ const List = () => {
                                 onChange={(item) => setDate([item.selection])}
                                 minDate={new Date()}
                                 ranges={date}
-                          />
+                            />
                         )}
                     </div>
                     <div className="lsItem">
@@ -58,7 +60,7 @@ const List = () => {
                                     type="text" 
                                     className="lsOptionsInput" 
                                     min={1}
-                                    placeholder="adult"
+                                    placeholder={options.adult}
                                 />
                             </div>
                             <div className="lsOptionsItem">
@@ -67,7 +69,7 @@ const List = () => {
                                     type="text" 
                                     className="lsOptionsInput" 
                                     min={0}
-                                    placeholder="children"
+                                    placeholder={options.children}
                                 />
                             </div>
                             <div className="lsOptionsItem">
@@ -76,7 +78,7 @@ const List = () => {
                                     type="text" 
                                     className="lsOptionsInput" 
                                     min={1}
-                                    placeholder="Room"
+                                    placeholder={options.room}
                                 />
                             </div>
                         </div>
@@ -84,7 +86,15 @@ const List = () => {
                     <button>Search</button>
                 </div>
                 <div className="listResult">
-                    componente
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
+                    <SearchItem/>
                 </div>
             </div>
         </div>
